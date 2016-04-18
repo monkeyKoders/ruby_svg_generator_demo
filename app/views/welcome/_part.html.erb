@@ -1,0 +1,14 @@
+Nombre: <%= part.name %>
+
+<% min = 0 %>
+<% max = @parts.first.count - 1 %>
+
+<%= number_field_tag "parts[#{part.class}]", 0, min: min, max: max, class: 'part_input' %>
+
+<br>
+
+<script type="text/javascript">
+  $(".part_input").change(function () {
+    $(this).closest("form").submit();
+  });
+</script>

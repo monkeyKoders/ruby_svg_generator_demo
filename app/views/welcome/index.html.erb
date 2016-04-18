@@ -1,0 +1,29 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<%= image_tag "data:image/svg+xml;utf8, #{raw(@image)}", width: "200px", id: 'image', class: 'img-responsive' %>
+
+
+<%= form_tag(welcome_theme_path, :remote => true) do %>
+  <%= select_tag "theme", options_for_select(RubySvgImageGenerator::THEMES) %>
+  <%= submit_tag %>
+<% end %>
+
+<%= form_tag(welcome_generate_path, :remote => true) do %>
+  <%= hidden_field_tag 'class_theme' %>
+
+  <div id="parts">
+  </div>
+
+  <%= submit_tag %>
+<% end %>
+
+<script type="text/javascript">
+  $("#theme").change(function(){
+    $(this).closest("form").submit();
+  });
+
+
+</script>
+
+
