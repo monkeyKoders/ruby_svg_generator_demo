@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'http://gemserver.websitesrevolution.net/'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -50,5 +51,4 @@ group :development do
 end
 
 gem 'ruby_matrix_to_svg'
-#gem 'ruby_svg_image_generator', :path => '../../ruby_svg_image_generator'
-gem 'ruby_svg_image_generator', :path => "../ruby_svg_image_generator"
+gem 'ruby_svg_image_generator'
