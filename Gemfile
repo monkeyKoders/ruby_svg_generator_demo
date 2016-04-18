@@ -51,4 +51,4 @@ end
 
 gem 'ruby_matrix_to_svg'
 #gem 'ruby_svg_image_generator', :path => '../../ruby_svg_image_generator'
-gem 'ruby_svg_image_generator', :path => "vendor/gems"
+gem 'ruby_svg_image_generator', :path => "vendor/ruby_svg_image_generator"

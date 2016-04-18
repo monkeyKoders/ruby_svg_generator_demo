@@ -1,5 +1,5 @@
 PATH
-  remote: vendor/gems
+  remote: vendor/ruby_svg_image_generator
   specs:
     ruby_svg_image_generator (0.0.1)
       ruby_matrix_to_svg (~> 0.0.1)
