@@ -1,0 +1,17 @@
+<% @theme.each do |part| %>
+  Nombre: <%= part.name %>
+  <% min = 0 %>
+  <% max = part.count - 1 %>
+
+  <%= number_field_tag "parts[#{part.class}]", 0, min: min, max: max, class: 'part_input' %>
+  <br>
+<% end %>
+
+
+<br>
+
+<script type="text/javascript">
+  $(".part_input").change(function () {
+    $(this).closest("form").submit();
+  });
+</script>

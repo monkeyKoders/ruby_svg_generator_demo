@@ -1,12 +1,11 @@
 class WelcomeController < ApplicationController
   def index
-    @image = RubySvgImageGenerator.create "test", :theme => RubySvgImageGenerator::T_HUMAN_AVATARS
+    @image = '' #RubySvgImageGenerator.create "test", :theme => RubySvgImageGenerator::T_HUMAN_AVATARS
   end
 
   def theme
     @name_theme = params[:theme]
-    theme = "RubySvgImageGenerator::#{@name_theme}".constantize.new
-    @parts = theme.parts
+    @theme = "RubySvgImageGenerator::#{@name_theme}".constantize.new
   end
 
   def generate
@@ -18,6 +17,9 @@ class WelcomeController < ApplicationController
 
       parts << parte
     end
+
+    debugger
+    @image = RubySvgImageGenerator.create("test", :theme => params['class_theme'], :parts => params[:parts])
   
     theme = "RubySvgImageGenerator::#{params['class_theme']}".constantize.new
     matrix_image = theme.merge_parts(parts)
