@@ -9,22 +9,9 @@ class WelcomeController < ApplicationController
   end
 
   def generate
-    parts = []
-
-    params[:parts].each do |part|
-      class_part = part[0].constantize.new
-      parte = class_part.get_matrix(part[1].to_i)
-
-      parts << parte
-    end
-
-    debugger
-    @image = RubySvgImageGenerator.create("test", :theme => params['class_theme'], :parts => params[:parts])
-  
-    theme = "RubySvgImageGenerator::#{params['class_theme']}".constantize.new
-    matrix_image = theme.merge_parts(parts)
-    
-    @image = RubyMatrixToSvg.matrix_to_svg('test', matrix_image)
+    theme = params[:class_theme]
+    parts = params[:parts].collect {|part| part[0].to_i}
+    @image = RubySvgImageGenerator.create "test_image", :theme => theme, :parts => parts
   end
 
 end
