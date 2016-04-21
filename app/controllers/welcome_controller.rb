@@ -10,8 +10,8 @@ class WelcomeController < ApplicationController
 
   def generate
     theme = params[:class_theme]
-    parts = params[:parts].collect {|part| part[0].to_i}
-    @image = RubySvgImageGenerator.create "test_image", :theme => theme, :parts => parts
+    parts = params[:parts].collect {|part| part[1].to_i}
+    @image = RubySvgImageGenerator.create("test_image", :theme => theme, :parts => parts)
   end
 
 end
