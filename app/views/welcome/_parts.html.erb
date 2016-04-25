@@ -1,17 +1,35 @@
 <% @theme.each do |part| %>
-  Nombre: <%= part.name %>
-  <% min = 0 %>
-  <% max = part.count - 1 %>
+  <% parts = part.count - 1 %>
+    <p class="part">
+      <a class="left">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      </a>
 
-  <%= number_field_tag "parts[#{part.class}]", 0, min: min, max: max, class: 'part_input' %>
-  <br>
+      <%= part.name %> (<span class="val">0</span>)
+      <%= hidden_field_tag "parts[#{part.class}]", 0, 'data-options' => parts, class: 'part_input' %>
+
+      <a class="right">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </a>
+    </p>
 <% end %>
 
-
-<br>
-
 <script type="text/javascript">
-  $(".part_input").change(function () {
+  $(".part .left").click(function(){
+    input = $(this).closest(".part").children("input");
+    val = $(this).closest(".part").children(".val");    
+    new_value = (input.data('options') + (input.val() - 1)) % input.data('options');
+    val.html(new_value);
+    input.val(new_value);
+    $(this).closest("form").submit();
+  });
+
+  $(".part .right").click(function(){
+    input = $(this).closest(".part").children("input");
+    val = $(this).closest(".part").children(".val");
+    new_value = (parseInt(input.val()) + 1) % input.data('options');
+    val.html(new_value);
+    input.val(new_value);
     $(this).closest("form").submit();
   });
 </script>
