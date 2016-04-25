@@ -54,4 +54,4 @@ group :development do
 end
 
 gem 'ruby_matrix_to_svg'
-gem 'ruby_svg_image_generator', '0.0.2'
+gem 'ruby_svg_image_generator'

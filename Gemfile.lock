@@ -195,7 +195,7 @@ DEPENDENCIES
   jquery-rails
   rails (= 4.2.5.2)
   ruby_matrix_to_svg
-  ruby_svg_image_generator (= 0.0.2)
+  ruby_svg_image_generator
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
