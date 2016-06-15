@@ -4,6 +4,10 @@ class WelcomeController < ApplicationController
     @theme = RubySvgImageGenerator.get_theme_instance(RubySvgImageGenerator::T_HUMAN_AVATARS)
   end
 
+  def theme_change
+    @theme = RubySvgImageGenerator.get_theme_instance(params[:theme])
+  end
+
   def generate
     theme_name = params[:theme]
     @theme = RubySvgImageGenerator.get_theme_instance(theme_name)
