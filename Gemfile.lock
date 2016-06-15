@@ -134,7 +134,7 @@ GEM
       json (~> 1.4)
     ref (2.0.0)
     ruby_matrix_to_svg (0.0.1)
-    ruby_svg_image_generator (0.0.3)
+    ruby_svg_image_generator (0.0.4)
       ruby_matrix_to_svg (~> 0.0.1)
     sass (3.4.22)
     sass-rails (5.0.4)

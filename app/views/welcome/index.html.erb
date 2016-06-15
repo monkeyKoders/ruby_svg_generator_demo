@@ -8,7 +8,7 @@
 <div class="jumbotron">
   <h3>Customize your icon!</h3>
   <p>Generate your awesome icons trying several options and click on generate</p>
-  
+
     <%= form_tag(welcome_generate_path, :remote => true) do %>
       <h4>1. Select a theme</h4>
       <%= select_tag "theme", options_for_select(RubySvgImageGenerator::THEMES, RubySvgImageGenerator::T_HUMAN_AVATARS), :class => "form-control" %>
@@ -20,10 +20,11 @@
         <div class="col-xs-6 text-center">
           <%= image_tag "data:image/svg+xml;utf8, #{raw(@image)}", width: "200px", id: 'image', class: 'img-responsive' %>
         </div>
-        
+
         <div class="col-xs-6">
           <%#= form_tag(welcome_generate_path, :remote => true) do %>
           <div id="parts">
+            <%= render partial: 'parts' %>
           </div>
         </div>
       </div>

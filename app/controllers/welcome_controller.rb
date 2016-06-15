@@ -1,11 +1,12 @@
 class WelcomeController < ApplicationController
   def index
     @image = RubySvgImageGenerator.create_random("random_image", :theme => RubySvgImageGenerator::T_HUMAN_AVATARS)
+    @theme = RubySvgImageGenerator.get_theme_instance(RubySvgImageGenerator::T_HUMAN_AVATARS)
   end
 
   def generate
     theme_name = params[:theme]
-    @theme = RubySvgImageGenerator.const_get(theme_name).new
+    @theme = RubySvgImageGenerator.get_theme_instance(theme_name)
 
     if params[:parts].blank?
       @image = RubySvgImageGenerator.create_random("random_image", :theme => theme_name)
