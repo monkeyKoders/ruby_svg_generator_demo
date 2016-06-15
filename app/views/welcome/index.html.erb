@@ -1,29 +1,37 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<br>
+<br>
 
-<%= image_tag "data:image/svg+xml;utf8, #{raw(@image)}", width: "200px", id: 'image', class: 'img-responsive' %>
+<h5>Are you looking for an amazing avatar generator for your website users? ruby_randimage is your gem!</h5>
+<h5>A powerful, customizable and sophisticated awesome SVG avatars generator from several options such as symmetries, size, color palette and color densities.</h5>
+<h5>RubyRandimage is a pure Ruby library without any dependencies.</h5>
 
+<div class="jumbotron">
+  <h3>Customize your icon!</h3>
+  <p>Generate your awesome icons trying several options and click on generate</p>
+  
+    <%= form_tag(welcome_generate_path, :remote => true) do %>
+      <h4>1. Select a theme</h4>
+      <%= select_tag "theme", options_for_select(RubySvgImageGenerator::THEMES, RubySvgImageGenerator::T_HUMAN_AVATARS), :class => "form-control" %>
+      <br>
 
-<%= form_tag(welcome_theme_path, :remote => true) do %>
-  <%= select_tag "theme", options_for_select(RubySvgImageGenerator::THEMES) %>
-  <%= submit_tag %>
-<% end %>
+      <h4>2. Combine the differents options</h4>
 
-<%= form_tag(welcome_generate_path, :remote => true) do %>
-  <%= hidden_field_tag 'class_theme' %>
-
-  <div id="parts">
-  </div>
-
-  <%= submit_tag %>
-<% end %>
+      <div class="row">
+        <div class="col-xs-6 text-center">
+          <%= image_tag "data:image/svg+xml;utf8, #{raw(@image)}", width: "200px", id: 'image', class: 'img-responsive' %>
+        </div>
+        
+        <div class="col-xs-6">
+          <%#= form_tag(welcome_generate_path, :remote => true) do %>
+          <div id="parts">
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
 
 <script type="text/javascript">
   $("#theme").change(function(){
     $(this).closest("form").submit();
   });
-
-
 </script>
-
-

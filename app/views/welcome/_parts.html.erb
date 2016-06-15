@@ -1,0 +1,35 @@
+<% @theme.each do |part| %>
+  <% parts = part.count - 1 %>
+    <p class="part">
+      <a class="left">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <%= part.name %> (<span class="val">0</span>)
+      <%= hidden_field_tag "parts[#{part.class}]", 0, 'data-options' => parts, class: 'part_input' %>
+
+      <a class="right">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </a>
+    </p>
+<% end %>
+
+<script type="text/javascript">
+  $(".part .left").click(function(){
+    input = $(this).closest(".part").children("input");
+    val = $(this).closest(".part").children(".val");    
+    new_value = (input.data('options') + (input.val() - 1)) % input.data('options');
+    val.html(new_value);
+    input.val(new_value);
+    $(this).closest("form").submit();
+  });
+
+  $(".part .right").click(function(){
+    input = $(this).closest(".part").children("input");
+    val = $(this).closest(".part").children(".val");
+    new_value = (parseInt(input.val()) + 1) % input.data('options');
+    val.html(new_value);
+    input.val(new_value);
+    $(this).closest("form").submit();
+  });
+</script>
