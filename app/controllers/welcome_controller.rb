@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
 
   def theme_change
     @theme = RubySvgImageGenerator.get_theme_instance(params[:theme])
+    @image = RubySvgImageGenerator.create_random("random_image", :theme => params[:theme])
   end
 
   def generate
