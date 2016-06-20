@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :repo_url, 'git@github.com:monkeyKoders/ruby_svg_generator_demo.git'
-set :branch, 'refactor'
+set :branch, 'master'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
