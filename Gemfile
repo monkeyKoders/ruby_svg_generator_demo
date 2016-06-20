@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
-source 'http://gemserver.websitesrevolution.net/'
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'

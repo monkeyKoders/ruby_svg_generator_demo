@@ -1,13 +1,12 @@
 <br>
 <br>
 
-<h5>Are you looking for an amazing avatar generator for your website users? ruby_randimage is your gem!</h5>
-<h5>A powerful, customizable and sophisticated awesome SVG avatars generator from several options such as symmetries, size, color palette and color densities.</h5>
-<h5>RubyRandimage is a pure Ruby library without any dependencies.</h5>
+<h5>ruby_svg_image_generator is a great gem, created for you but specially for your web application users.</h5>
+<h5>It is a SVG avatars generator gem based on themes which can be designed by users but also you can find some great pre-designed themes on it.</h5>
 
 <div class="jumbotron">
   <h3>Customize your icon!</h3>
-  <p>Generate your awesome icons trying several options and click on generate</p>
+  <p>Generate your awesome icons trying several</p>
 
   <%= form_tag(welcome_generate_path, :remote => true) do %>
     <h4>1. Select a theme</h4>
@@ -30,6 +29,10 @@
       </div>
     </div>
   <% end %>
+
+  <hr>
+
+  <h4>Do you want to create your own svg theme? <%= link_to "PRs are welcome", "https://github.com/monkeyKoders/ruby_svg_image_generator/pulls" %></h4>
 </div>
 
 <script type="text/javascript">
