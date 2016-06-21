@@ -51,4 +51,4 @@ group :development do
   gem 'capistrano-rvm'
 end
 
-#gem 'ruby_svg_image_generator', '0.0.1'
+gem 'ruby_svg_image_generator'
