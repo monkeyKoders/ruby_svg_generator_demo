@@ -193,7 +193,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.5.2)
-  ruby_svg_image_generator (= 0.0.1)
+  ruby_svg_image_generator
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
@@ -203,3 +203,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   unicorn
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.6
